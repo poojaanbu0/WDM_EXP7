@@ -1,5 +1,6 @@
 ### EX7 Implementation of Link Analysis using HITS Algorithm
-### DATE: 
+### NAME: Pooja.A
+### DATE: 20.04.2024
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
 <div align = "justify">
@@ -32,7 +33,10 @@ in a network of web pages based on the structure of the links between them.
     <p>    Visualize using bar chart to represent authority and hub scores.
 
 ### Program:
-
+```
+Developed by: Pooja.A
+Register Number: 212222240072
+```
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -93,5 +97,7 @@ plt.show()
 ```
 
 ### Output:
+![image](https://github.com/poojaanbu0/WDM_EXP7/assets/119390329/2dacc458-b724-4eaa-a540-7a271d343ac1)
 
 ### Result:
+Thus Link analysis using HITS algorithm in python is successfully implemented.
