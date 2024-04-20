@@ -48,16 +48,16 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     
     for i in range(max_iterations):
         # Authority update
-
-             /*WRITE YOUR CODE HERE
+        new_authority_scores = np.dot(adjacency_matrix.T, hub_scores)
+        new_authority_scores /= np.linalg.norm(new_authority_scores, ord=2)  # Normalizing
         
         # Hub update
-
-             /*WRITE YOUR CODE HERE
+        new_hub_scores = np.dot(adjacency_matrix, new_authority_scores)
+        new_hub_scores /= np.linalg.norm(new_hub_scores, ord=2)  # Normalizing
         
         # Check convergence
-
-             /*WRITE YOUR CODE HERE
+        authority_diff = np.linalg.norm(new_authority_scores - authority_scores, ord=2)
+        hub_diff = np.linalg.norm(new_hub_scores - hub_scores, ord=2)
         
         if authority_diff < tol and hub_diff < tol:
             break
@@ -80,13 +80,13 @@ authority, hub = hits_algorithm(adj_matrix)
 for i in range(len(authority)):
     print(f"Node {i}: Authority Score = {authority[i]:.4f}, Hub Score = {hub[i]:.4f}")
 
-# bar chart of authority vs hub scores
+# Bar chart of authority vs hub scores
 
 nodes = np.arange(len(authority))
 bar_width = 0.35
 plt.figure(figsize=(8, 6))
-plt.bar(nodes - bar_width/2, authority, bar_width, label='Authority', color='blue')
-plt.bar(nodes + bar_width/2, hub, bar_width, label='Hub', color='green')
+plt.bar(nodes - bar_width/2, authority, bar_width, label='Authority', color='yellow')  # Change color to sky blue
+plt.bar(nodes + bar_width/2, hub, bar_width, label='Hub', color='purple')  # Change color to light green
 plt.xlabel('Node')
 plt.ylabel('Scores')
 plt.title('Authority and Hub Scores for Each Node')
@@ -94,10 +94,11 @@ plt.xticks(nodes, [f'Node {i}' for i in nodes])
 plt.legend()
 plt.tight_layout()
 plt.show()
+
 ```
 
 ### Output:
-![image](https://github.com/poojaanbu0/WDM_EXP7/assets/119390329/2dacc458-b724-4eaa-a540-7a271d343ac1)
+![image](https://github.com/poojaanbu0/WDM_EXP7/assets/119390329/40902455-7531-47f9-81a2-46edd0b3e270)
 
 ### Result:
 Thus Link analysis using HITS algorithm in python is successfully implemented.
